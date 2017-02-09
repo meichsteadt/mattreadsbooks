@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>MattReadsBooks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="jumbotron">
+        <%= link_to(books_path) do %><h1 class="text-center">Matt Reads Books</h1><% end %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

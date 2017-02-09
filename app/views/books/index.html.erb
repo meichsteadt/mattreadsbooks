@@ -1,0 +1,19 @@
+<%= link_to books_path('az') do %><button>Sort A-Z</button><% end %>
+<%= link_to books_path('date') do %><button>Sort by date created</button><% end %>
+<div class="row">
+<% @books.each do |b| %>
+  <%= link_to(b) do%>
+    <div class="col-md-4 book panel">
+      <% if b.image %>
+        <img class="book-image" src="<%= b.image %>" alt="<%= b.name %>">
+      <% end %>
+      <div class="info">
+        <h3><em><%= b.name %></em>, <%= b.author %></h3>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
+<div class="row">
+  <%= link_to(new_book_path) do %><button>New Book</button> <% end %>
+</div>

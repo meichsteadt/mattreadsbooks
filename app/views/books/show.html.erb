@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <img class="book-image" src="<%= @book.image %>" alt="">
+  </div>
+  <div class="col-md-6">
+    <h1><%= @book.name %></h1>
+    <h3><em><%= @book.author %></em></h3>
+    <%= link_to(edit_book_path(@book)) do %><button>Edit Book</button><% end %>
+    <%= link_to(book_path(@book), :method =>'delete') do %><button>Delete Book</button><% end %>
+  </div>
+</div>
+<div class="row">
+  <hr>
+  <div class="col-md-10 col-md-offset-1">
+    <% if @book.reviews.length > 0 %>
+      <h1>Reviews</h1>
+      <% @book.reviews.each do |review| %>
+        <div class="col-md-10 col-md-offset-1">
+          <div class="panel">
+            <h3><%= review.tagline %></h3>
+            <h4><em><%= review.author %></em></h4>
+            <p><%= review.review %></p>
+          </div>
+          <% if review.rating %>
+            <% review.rating.times do %>
+              <i class="fa fa-star fa-lg"></i>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <h2 class="text-center"><em>There are currently no reviews for this book</em></h2>
+    <% end %>
+  </div>
+</div>
