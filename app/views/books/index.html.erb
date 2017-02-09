@@ -1,5 +1,7 @@
-<%= link_to books_path('az') do %><button>Sort A-Z</button><% end %>
-<%= link_to books_path('date') do %><button>Sort by date created</button><% end %>
+<div class="sort-buttons">
+  <%= link_to books_path('az') do %><button>Sort A-Z</button><% end %>
+  <%= link_to books_path('date') do %><button>Sort by date created</button><% end %>
+</div>
 <div class="row">
 <% @books.each do |b| %>
   <%= link_to(b) do%>
@@ -10,10 +12,15 @@
       <div class="info">
         <h3><em><%= b.name %></em>, <%= b.author %></h3>
       </div>
+      <% if b.reviews.average(:rating).to_i > 0  %>
+         <p><em>Average rating:</em> <%= b.reviews.average(:rating).round(1) %></p>
+      <% else %>
+        <p><em>No ratings available</em></p>
+      <% end %>
     </div>
   <% end %>
 <% end %>
 </div>
-<div class="row">
+<div class="sort-buttons">
   <%= link_to(new_book_path) do %><button>New Book</button> <% end %>
 </div>

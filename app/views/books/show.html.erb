@@ -5,6 +5,11 @@
   <div class="col-md-6">
     <h1><%= @book.name %></h1>
     <h3><em><%= @book.author %></em></h3>
+    <% if @book.reviews.average(:rating).to_i > 0  %>
+      <h4><em>Average rating:</em> <%= @book.reviews.average(:rating).round(1) %> </h4>
+    <% else %>
+      <h4>There are no reviews for this book yet</h4>
+    <% end %>
     <%= link_to(edit_book_path(@book)) do %><button>Edit Book</button><% end %>
     <%= link_to(book_path(@book), :method =>'delete') do %><button>Delete Book</button><% end %>
   </div>
@@ -12,20 +17,23 @@
 <div class="row">
   <hr>
   <div class="col-md-10 col-md-offset-1">
+    <%= link_to new_book_review_path(@book.id) do %> <button>New Review</button> <% end %>
     <% if @book.reviews.length > 0 %>
       <h1>Reviews</h1>
       <% @book.reviews.each do |review| %>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1 review">
           <div class="panel">
+            <%= link_to edit_book_review_path(@book.id, review.id) do %><span class="edit"><i class="fa fa-pencil"></i> edit</span> <% end %>
+            <%= link_to book_review_path(@book.id, review.id), :method => "delete" do %><span class="delete"><i class="fa fa-trash"></i> delete</span> <% end %>
             <h3><%= review.tagline %></h3>
             <h4><em><%= review.author %></em></h4>
             <p><%= review.review %></p>
-          </div>
-          <% if review.rating %>
-            <% review.rating.times do %>
-              <i class="fa fa-star fa-lg"></i>
+            <% if review.rating %>
+              <% review.rating.times do %>
+                <i class="fa fa-star fa-lg"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       <% end %>
     <% else %>

@@ -1,0 +1,31 @@
+<%= render "layouts/errors", :object => @review %>
+
+<div class="col-sm-6">
+  <%= form_for [@book, @review] do |f| %>
+  <div class="form-group">
+    <%= f.label :author, "Your name" %>
+    <%= f.text_field :author, class: 'form-control', required: true%>
+  </div>
+    <div class="form-group">
+      <%= f.label :review %>
+      <%= f.text_area :review, class: 'form-control', required: true, size: '24x6'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :tagline %>
+      <%= f.text_field :tagline, class: 'form-control', required: true%>
+    </div>
+    <div class="form-group">
+      <%= radio_button_tag(:rating, 1)%>
+      <%= label_tag(:rating_1, "1") %>
+      <%= radio_button_tag(:rating, 2) %>
+      <%= label_tag(:rating_2, "2") %>
+      <%= radio_button_tag(:rating, 3) %>
+      <%= label_tag(:rating_3, "3") %>
+      <%= radio_button_tag(:rating, 4) %>
+      <%= label_tag(:rating_4, "4") %>
+      <%= radio_button_tag(:rating, 5) %>
+      <%= label_tag(:rating_5, "5") %>
+    </div>
+    <%= f.submit class:'button'%>
+  <% end %>
+</div>

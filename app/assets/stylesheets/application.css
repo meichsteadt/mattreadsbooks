@@ -1,7 +1,7 @@
 .book {
   background: #fff;
   text-align: center;
-  min-height: 384px;
+  min-height: 420px;
 }
 
 .book img {
@@ -37,4 +37,29 @@ button:hover, .button:hover {
 
 .jumbotron a {
   color: #7C8595;
+}
+
+.edit, .delete {
+  position: absolute;
+  left: -35px;
+  top: 23px;
+  display: none;
+}
+
+.delete {
+  left: -40px;
+  top: 43px;
+}
+
+.edit:hover, .delete:hover {
+  cursor: pointer;
+}
+
+.review:hover .edit, .review:hover .delete {
+  display: block;
+}
+
+.sort-buttons {
+  margin: 40px auto;
+  text-align: center;
 }
