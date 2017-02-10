@@ -1,5 +1,15 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 75px;
 }
 
 h1, h2, h3, h4 {
@@ -7,7 +17,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
 }
 
 .background {
@@ -37,9 +47,8 @@ p {
 
 .book-image {
   display: block;
-  float: left;
+  margin: 0 auto;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.3), -3px 3px 3px rgba(0,0,0,0.3);
-  height: 300px;
 }
 
 .info {
@@ -205,6 +214,10 @@ footer {
   margin-top: 20px;
   text-align: center;
   padding: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 footer p {
@@ -227,6 +240,29 @@ footer .fa-facebook-square:hover {
 
 footer .fa-twitter-square:hover {
   color: #0084b4;
+}
+
+.right {
+  float: right;
+}
+
+.header {
+  margin: 50px;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .right {
+    float: none;
+  }
+  .books .col-md-8{
+    height: 320px;
+  }
 }
 
 @keyframes fadein {

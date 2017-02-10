@@ -4,8 +4,12 @@
   <div class="row books">
   <% @books.each_with_index do |b, i| %>
     <%= link_to(b) do%>
-    <% if i == 0 %>
+    <% if i == 0 || i == 7%>
+      <% if i% 12 == 0 %>
       <div class="col-md-8 col-sm-9 book">
+      <% else %>
+      <div class="col-md-8 col-sm-9 right book">
+      <% end %>
         <div class="background" style="background: url('<%= b.image %>')center no-repeat; background-size: cover;"></div>
           <div class="info">
             <h2><em><%= b.name %>,</em>
@@ -13,15 +17,6 @@
             <br><%= b.author %></h2>
           </div>
       </div>
-    <% elsif i < 3 %>
-    <div class="col-md-4 col-sm-3 book">
-      <div class="background" style="background: url('<%= b.image %>')center no-repeat; background-size: cover;"></div>
-        <div class="info">
-          <h2><em><%= b.name %>,</em>
-          <br>
-          <br><%= b.author %></h2>
-        </div>
-    </div>
     <% else %>
     <div class="col-md-4 col-sm-3 book">
       <div class="background" style="background: url('<%= b.image %>')center no-repeat; background-size: cover;"></div>
