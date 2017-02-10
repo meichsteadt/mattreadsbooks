@@ -4,6 +4,8 @@
     <title>MattReadsBooks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Open+Sans|Raleway" rel="stylesheet">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,11 +13,16 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <%= link_to(books_path) do %><h1 class="text-center">Matt Reads Books</h1><% end %>
-      </div>
       <%= yield %>
-    </div>
+
+    <footer>
+      <div class="col-xs-12">
+        <p>Matt Reads Books &copy; 2017</p>
+      </div>
+      <div class="col-xs-12">
+        <%= link_to 'https://facebook.com' do %><i class="fa fa-facebook-square"></i> <% end %>
+          <%= link_to 'https://twitter.com' do %><i class="fa fa-twitter-square"></i> <% end %>
+      </div>
+    </footer>
   </body>
 </html>

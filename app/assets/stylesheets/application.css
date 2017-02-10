@@ -1,20 +1,81 @@
+body {
+  background-color: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bad Script';
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+}
+
+.books .col-md-8{
+  height: 640px;
+}
+
+.book-header {
+  font-size: 78px;
+  text-align: center;
+  margin: 50px 0;
+}
+
 .book {
   background: #fff;
   text-align: center;
-  min-height: 420px;
-}
-
-.book img {
-  margin: 0 auto;
-  height: 300px;
-  display: block;
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.3), -3px 3px 3px rgba(0,0,0,0.3);
+  height: 320px;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 1;
 }
 
 .book-image {
   display: block;
+  float: left;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.3), -3px 3px 3px rgba(0,0,0,0.3);
   height: 300px;
+}
+
+.info {
+  color: transparent;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color .4s, color .4s;
+  height: 0;
+  position: absolute;
+  top: 0;
+}
+
+.book:hover > .info {
+  background-color: rgba(0,0,0,0.2);
+  height: 100%;
+  color: #fff;
+}
+
+.book:hover > .background {
+  filter: blur(5px);
+}
+
+.info h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info h3 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
 }
 
 button, .button {
@@ -62,4 +123,107 @@ button:hover, .button:hover {
 .sort-buttons {
   margin: 40px auto;
   text-align: center;
+}
+
+#hero {
+  background: url('https://images.unsplash.com/photo-1477240489935-6c96abea2aba?dpr=1format&q=80&cs=tinysrgb&crop=') center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  max-height: 1050px;
+  position: static;
+  text-align: center;
+}
+
+#hero h1, #hero h3 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.8);
+  font-family: 'Bad Script', cursive;
+  font-size: 80px;
+  display: block;
+  margin: 0;
+}
+
+#hero h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+}
+
+#content {
+  padding: 0 25px;
+  text-align: center;
+}
+
+#content h1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#content p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+}
+
+#content .img img {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4), -2px 2px 5px rgba(0,0,0,0.4);
+  max-width: 100%;
+}
+
+.img {
+  position: relative;
+}
+
+#content h2 {
+  color: #333;
+  position: absolute;
+  font-family: 'Bad Script';
+  font-size: 44px;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -12%);
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.2), -1px 2px 3px rgba(0,0,0,0.2)
+}
+
+#content h2 .fa {
+  margin-left: 4px;
+}
+
+#content h2:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.underline {
+  border-bottom: 2px solid #333;
+  width: 80%;
+  margin: 20px auto;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 8px;
+}
+
+footer p {
+  font-family: 'Open Sans';
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+}
+
+footer .fa {
+  font-size: 32px;
+  margin-left: 5px;
+  transition: color 0.4s;
+  color: #333;
+}
+
+footer .fa-facebook-square:hover {
+  color: #3b5998;
+}
+
+footer .fa-twitter-square:hover {
+  color: #0084b4;
 }
