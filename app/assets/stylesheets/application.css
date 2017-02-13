@@ -135,7 +135,7 @@ button:hover, .button:hover {
 }
 
 #hero {
-  background: url('https://images.unsplash.com/photo-1477240489935-6c96abea2aba?dpr=1format&q=80&cs=tinysrgb&crop=') center no-repeat;
+  background: url('https://images.unsplash.com/photo-1477240489935-6c96abea2aba?dpr=1&auto=compress,format&fit=crop&w=2000&q=80&cs=tinysrgb&crop=') center no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
