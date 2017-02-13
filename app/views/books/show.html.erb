@@ -9,8 +9,10 @@
       <img class="book-image img-responsive" src="<%= @book.image %>" alt="">
     </div>
     <div class="col-md-6 col-sm-12">
-      <h3><%= @book.reviews[0].tagline %></h3>
-      <p> <%= @book.reviews[1].review %> </p>
+      <% if @book.reviews.length > 1 %>
+        <h3><%= @book.reviews[0].tagline %></h3>
+        <p> <%= @book.reviews[1].review %> </p>
+      <% end %>
       <h3>Key Take Aways</h3>
         <ul>
           <li>point 1</li>
@@ -19,7 +21,9 @@
           <li>point 4</li>
         </ul>
         <h3>Overall rating</h3>
-        <% @book.reviews[0].rating.times do  %>
+        <% if @book.reviews.length > 1 %>
+          <% @book.reviews[0].rating.times do  %>
+        <% end %>
           <i class="fa fa-star fa-lg"></i>
         <% end %>
     </div>
